@@ -71,6 +71,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Starfield_web.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://starfield-battles.up.railway.app/"
+]
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
