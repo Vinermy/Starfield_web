@@ -72,7 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Starfield_web.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://starfield-battles.up.railway.app/"
+    "https://starfield-battles.up.railway.app"
 ]
 
 
