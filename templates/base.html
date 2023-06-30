@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample09">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Домашняя страница</a>
+              <a class="nav-link" href="{% url 'dashboard' %}">Домашняя страница</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Библиотека</a>
@@ -33,20 +33,20 @@
           </ul>
           {% if not request.user.is_authenticated %}
                     <div class="text-end">
-                        <button type="button" class="btn btn-outline-light me-2">Войти</button>
+                        <a type="button" class="btn btn-outline-light me-2" href="{% url 'auth-login' %}">Войти</a>
                         <a type="button" class="btn btn-warning" href="{% url 'auth-signup' %}">Зарегистрироваться</a>
                     </div>
                 {% else %}
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-duotone fa-circle-user"></i>
+                            <i class="fa-solid fa-2xl fa-circle-user"></i>
                         </a>
                         <ul class="dropdown-menu text-small" style="">
-                            <li><a class="dropdown-item" href="#">Учетная запись</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile-page' %}">Учетная запись</a></li>
                             <li><a class="dropdown-item" href="#">Моя библиотека</a></li>
                             <li><a class="dropdown-item" href="#">Мои флоты</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="#">Выйти</a></li>
+                            <li><a class="dropdown-item text-danger" href="{% url 'auth-logout' %}">Выйти</a></li>
                         </ul>
                     </div>
                 {% endif %}

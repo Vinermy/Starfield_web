@@ -1,22 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title %}Регистрация{% endblock title %}
+{% block title %}Вход{% endblock title %}
 
 {% block content %}
     <div class="container pt-3 w-75 ">
-        <h2 class="h2">Регистрация</h2>
+        <h2 class="h2">Войти в аккаунт</h2>
         <form method="post">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="id_username" class="form-label">Логин</label>
-                <input type="text" class="form-control" id="id_username" aria-describedby="usernameHelp" name="username">
-                <div id="usernameHelp" class="form-text">Латинские буквы, цифры</div>
+                <input type="text" class="form-control" id="id_username" name="username">
             </div>
             <div class="mb-3">
                 <label for="id_password" class="form-label">Пароль</label>
                 <input type="password" class="form-control" id="id_password" name="password">
             </div>
-            <button type="submit" class="btn btn-primary">Создать аккаунт</button>
+            <button type="submit" class="btn btn-primary">Войти</button>
         </form>
     </div>
 {% endblock content %}
