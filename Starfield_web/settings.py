@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from os import getenv, path
 from pathlib import Path
 
+from django.contrib import messages
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -131,3 +133,11 @@ STATIC_ROOT = path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGE_TAGS = {
+    messages.DEBUG: "text-bg-secondary",
+    messages.INFO: "text-bg-primary",
+    messages.SUCCESS: "text-bg-success",
+    messages.WARNING: "text-bg-warning",
+    messages.ERROR: "text-bg-error",
+}
